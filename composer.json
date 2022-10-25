@@ -2,7 +2,7 @@
     "name": "yann-soaz/laravel_seo",
     "description": "package de gestion des attributs seo pour les contenu laravel",
     "require": {
-        "livewire/livewire": "dev-master"
+        "livewire/livewire": "*"
     },
     "license": "GPL-3.0-or-later",
     "autoload": {
