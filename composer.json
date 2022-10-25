@@ -1,0 +1,27 @@
+{
+    "name": "yann-soaz/laravel_seo",
+    "description": "package de gestion des attributs seo pour les contenu laravel",
+    "require": {
+        "livewire/livewire": "dev-master"
+    },
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "YannSoaz\\LaravelSEO\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "yann-soaz",
+            "email": "jfbillot@yann-soaz.fr"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YannSoaz\\LaravelSEO\\LaravelSEOProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
