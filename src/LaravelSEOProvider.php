@@ -24,7 +24,7 @@ class LaravelSEOProvider extends ServiceProvider
      */
     public function boot()
     {
-        Livewire::component('seo-edit', SEOEditComponent::class);
+        Livewire::component('ys-seo', SEOEditComponent::class);
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->loadViewsFrom(__DIR__.'/../views', 'ys-seo');
