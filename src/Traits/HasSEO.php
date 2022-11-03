@@ -6,24 +6,55 @@ use YannSoaz\LaravelSEO\Models\SEO;
 
 trait HasSEO {
   
-  protected function defaultImageSEO () {
+  public static function boot()
+  {
+    parent::boot();
+  
+      // After item is created
+    static::deleted(function($item) {
+      $seo = $item->seo;
+      if ($seo) {
+        $seo->delete();
+      }
+    });
+  }
+  
+  public function removeSEO () {
+    if ($this->seo) {
+      $this->seo->delete();
+    }
+  }
+
+  public function getSeoImage () {
+    if ($this->seo) {
+      return $this->seo->imagePath();
+    }
+    return $this->getDefaultSeoImage();
+  }
+
+  public function getDefaultSeoImage () {
     return false;
   }
 
 
+  public function getContentLink () {
+    return $_SERVER['SERVER_HOST'].'/page-url';
+  }
+
   public function seo () {
-    return $this->morphOne(SEO::class, 'content_type', 'content_id');
+    return $this->morphOne(SEO::class, 'content');
   }
 
   public function seoFields () {
-    return '';
+    return view('ys-seo::edit', ['content' => $this]);
   }
 
   public function seoHeader () {
-    return views('ys-seo::edit');
+    return view('ys-seo::head');
   }
 
   public function setSEO (SEO $seo) {
     $this->seo()->save($seo);
   }
+
 }

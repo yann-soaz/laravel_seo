@@ -13,21 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('seo-images', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-        });
 
         Schema::create('seo', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->longText('description');
-            $table->string('fb_title')->nullable();
-            $table->longText('fb_description')->nullable();
-            $table->foreignId('fb_image')->nullable()->refence('id')->on('seo-images');
-            $table->string('tw_title')->nullable();
-            $table->longText('tw_description');
-            $table->foreignId('tw_image')->nullable()->refence('id')->on('seo-images');
+            $table->string('social_title')->nullable();
+            $table->longText('social_description')->nullable();
+            $table->string('social_image')->nullable();
             $table->integer('content_id')->nullable();
             $table->string('content_type')->nullable();
         });
@@ -40,7 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('seo-images');
         Schema::dropIfExists('seo');
     }
 };
