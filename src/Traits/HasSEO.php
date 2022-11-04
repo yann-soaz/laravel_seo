@@ -38,7 +38,7 @@ trait HasSEO {
 
 
   public function getContentLink () {
-    return $_SERVER['SERVER_HOST'].'/page-url';
+    return false;
   }
 
   public function seo () {
@@ -50,7 +50,7 @@ trait HasSEO {
   }
 
   public function seoHeader () {
-    return view('ys-seo::head');
+    return view('ys-seo::head', ['seo' => $this->seo, 'url' => $this->getContentLink()]);
   }
 
   public function setSEO (SEO $seo) {

@@ -1,6 +1,6 @@
 {
-    "name": "yann-soaz/laravel_seo_livewire",
-    "description": "package de gestion des attributs seo pour les contenu via un composant laravel-livewire",
+    "name": "yann-soaz/laravel_seo",
+    "description": "package de gestion des attributs seo pour les contenu laravel",
     "require": {
         "livewire/livewire": "*"
     },

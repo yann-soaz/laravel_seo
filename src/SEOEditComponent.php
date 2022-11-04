@@ -13,6 +13,7 @@ class SEOEditComponent extends Component
   use WithFileUploads;
 
   const SAVE_EVENT = 'save_seo';
+  const SAVE_END = 'save_seo_end';
 
   public $tab = 'google';
 
@@ -72,6 +73,7 @@ class SEOEditComponent extends Component
     $contentSEO->social_description = $this->seo['social_description'];
     $this->saveImage($contentSEO);
     $contentSEO->save();
+    $this->emit(static::SAVE_END);
   }
 
   protected function saveImage (SEO &$seo) {

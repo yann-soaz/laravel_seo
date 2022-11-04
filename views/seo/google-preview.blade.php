@@ -43,21 +43,21 @@
       @if(!empty($title)) 
         {{ $title }} 
       @else
-        Lock (computer science) - Wikipedia
+        titre de démo
       @endif
     </h2>
     <a>
       @if(!empty($link)) 
         {{ $link }} 
       @else
-        https://en.wikipedia.org/wiki/Lock_(computer_science)
+        {{ $_SERVER['HTTP_HOST'] }}/page-url
       @endif
     </a> <button>▼</button>
     <p>
       @if(!empty($description)) 
         {{ $description }} 
       @else
-        In computer science, a lock or mutex (from mutual exclusion) is a synchronization mechanism for enforcing limits on access to a resource in an
+        Description de démonstration de l'apperçu.
       @endif
     </p>
   </div>
