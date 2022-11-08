@@ -1,6 +1,7 @@
 {
     "name": "yann-soaz/laravel_seo",
     "description": "package de gestion des attributs seo pour les contenu laravel",
+    "version": "v1.1",
     "require": {
         "livewire/livewire": "*"
     },

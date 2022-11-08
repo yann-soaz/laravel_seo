@@ -105,6 +105,6 @@ Certaines fonctions peuvent être surchargées dans votre modèle :
 Evènements :
 
 | event | Description |
-|--|--|--|
+|--|--|
 | SEOEditComponent::SAVE_EVENT | évènement à lancer pour provoquer l'enregistrement du seo dans le composant SEO |
 | SEOEditComponent::SAVE_END | évènement lancé par le composant SEO lorsque l'enregistrement SEO est effectué |
